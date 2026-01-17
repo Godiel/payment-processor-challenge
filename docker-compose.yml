@@ -2,14 +2,22 @@ version: '3.8'
 
 services:
   sqlserver:
+    # Usamos la versión 2022. En un entorno productivo real, 
+    # fijaríamos el tag específico (ej. 2022-CU10) para evitar actualizaciones sorpresivas.
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: payment_sql
     environment:
       - ACCEPT_EULA=Y
+      # IMPORTANTE: Credencial hardcodeada EXCLUSIVAMENTE para entorno de desarrollo local.
+      # En producción, esto se inyectaría vía Docker Secrets o Variables de Entorno del orquestador.
       - MSSQL_SA_PASSWORD=BDLocal123!
     ports:
+      # Exponemos el puerto al host para permitir depuración con SSMS o Azure Data Studio.
+      # En producción, la BD no debería ser accesible desde internet.
       - "1433:1433"
     volumes:
+      # Persistencia: Usamos un volumen nombrado para que los datos sobrevivan 
+      # si el contenedor se destruye o reinicia (Containers are ephemeral, Data is permanent).
       - sql_data:/var/opt/mssql
 
 volumes:

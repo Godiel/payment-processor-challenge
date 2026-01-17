@@ -7,6 +7,8 @@ public class Payment
     public decimal Amount { get; set; }
     public string Status { get; set; } = "Pending";
 
+    // Crucial para manejar retries de red y garantizar Exactly-Once Delivery.
+    // Se debe indexar como UNIQUE en la BD.
     public string IdempotencyKey { get; set; } = string.Empty;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

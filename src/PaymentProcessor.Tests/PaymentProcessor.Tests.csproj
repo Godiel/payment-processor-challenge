@@ -19,10 +19,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PaymentProcessor.Core\PaymentProcessor.Core.csproj" />
-    <ProjectReference Include="..\PaymentProcessor.Infrastructure\PaymentProcessor.Infrastructure.csproj" />
-    <ProjectReference Include="..\PaymentProcessor.Api\PaymentProcessor.Api.csproj" />
-  </ItemGroup>
-
 </Project>

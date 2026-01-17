@@ -106,7 +106,7 @@ Este proyecto demuestra soluciones a problemas complejos de la industria fintech
 
 <div align="center">
 
-Developed by **[Godiel](https://github.com/Godiel)**
+Developed by **[Anthonyjgn - Godiel](https://github.com/Godiel)**
 <br>
 
 </div>

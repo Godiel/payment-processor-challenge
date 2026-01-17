@@ -7,5 +7,7 @@ public class Account
     public decimal Balance { get; set; }
     public string Currency { get; set; } = "USD";
 
+    // Manejo de concurrencia optimista (si decidimos quitar el bloqueo pesimista a futuro).
+    // Mapea a timestamp/rowversion en SQL Server.
     public byte[] RowVersion { get; set; } = Array.Empty<byte>();
 }
